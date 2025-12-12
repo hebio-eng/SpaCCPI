@@ -52,7 +52,7 @@ if 'spatial' not in st_data.obsm:
     st_data.obsm['spatial'] = spatial_coords
     print("spatial location has been added to obsm.")
 else:
-    print("obsm 中已存在 spatial 数据，跳过添加。")
+    print("obsm has spatial location.")
 st_data.obs['uniform_color'] = 1
 sc.pl.spatial(
     st_data,
