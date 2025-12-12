@@ -6,9 +6,9 @@ conda env create -f environment.yml
 ## example：
 ```
 import os
-os.environ["OMP_NUM_THREADS"] = "4"   # OpenMP 线程数
-os.environ["MKL_NUM_THREADS"] = "4"   # MKL 线程数
-os.environ["NUMEXPR_NUM_THREADS"] = "4"  # NumExpr 线程数
+os.environ["OMP_NUM_THREADS"] = "4"
+os.environ["MKL_NUM_THREADS"] = "4" 
+os.environ["NUMEXPR_NUM_THREADS"] = "4" 
 import mi
 import scanpy as sc
 import pandas as pd
@@ -69,9 +69,9 @@ mi.get_cca(sc_data, st_data, path, GPU = True)
 mi.get_scc(sc_data, path, GPU = True)
 perc = 0.005
 mi.get_mapping(path, perc)
-n_samples = 20 #采样数量
-min_cell = 20 #至少存在的细胞数量
-spot_size = 150 #画图的位点大小
+n_samples = 20 #Sample size
+min_cell = 20 #The minimum number of existing cells
+spot_size = 150 #The size of the spots in the reconstruction of cellular spatial images
 mi.build_image(sc_data, st_data, celltype, spot_size, n_samples, min_cell, inhere = 'recluster', path = path)
 mi.distance_score(path)
 ```
