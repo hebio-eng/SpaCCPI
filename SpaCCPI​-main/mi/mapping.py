@@ -410,7 +410,7 @@ def plot_cell(ct, sampled_idx, ad_map, st_data, spot_size, output_dir):
     # 4.4 绘制每个采样细胞
     for idx in sampled_idx:
         prob_dist = ad_map[idx, :].X.flatten()
-        # prob_dist = lof_suppress(prob_dist, ad_map, k=10, suppress_factor=0.2)
+        prob_dist = lof_suppress(prob_dist, ad_map, k=10, suppress_factor=0.2)
         prob_dist = clip_spatial_prob(prob_dist, lower_perc=0.003, upper_perc=0.997)
         st_data.obs['temp_prob'] = prob_dist
         fig, ax = plt.subplots(figsize=(8, 6), dpi=300)
